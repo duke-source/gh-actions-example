@@ -1,0 +1,16 @@
+name: Pull request labeler
+
+on:
+  pull_request:
+    types: opened
+
+jobs:
+  add-label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+      - name: Try to add label to pull request
+        run: |
+          gh pr edit ${{ github.event.pull_request.number }} --add-label "needs-review"
+        env: GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
