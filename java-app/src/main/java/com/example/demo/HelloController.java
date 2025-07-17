@@ -8,6 +8,7 @@ public class HelloController {
 
     @GetMapping("/hello")
     public String hello() {
+        // This is a simple endpoint that returns a greeting message.
         return "Hello World 2!";
     }
 }
