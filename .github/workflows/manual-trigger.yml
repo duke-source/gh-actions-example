@@ -2,10 +2,18 @@ name: Manual Trigger Workflow
 
 on:
   workflow_dispatch:
-
+    inputs:
+      name:
+        description: 'Name of the user to greet'
+        required: true
+        default: 'Pedro'
+      specialGreeting:
+        description: 'Ask for a special greeting'
+        required: false
+        type: boolean
 jobs:
   greet:
     runs-on: ubuntu-latest
     steps:
       - name: Greet the user
-        run: echo "Hello, this is a manual trigger workflow!"
+        run: echo "Hello, ${{ github.event.inputs.name }}!"
