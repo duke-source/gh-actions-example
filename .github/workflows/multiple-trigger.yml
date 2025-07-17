@@ -1,0 +1,7 @@
+name: Multiple Trigger Workflow
+
+on:
+  issues:
+    types:
+      - opened
+      - labeled
