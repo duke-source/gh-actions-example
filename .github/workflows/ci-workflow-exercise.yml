@@ -60,6 +60,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: cve-scan
+    if: startsWith(github.ref, 'refs/heads/main')  # 🔧 This is incorrect — fix it!
     steps:
       - name: Deploy
         run: echo "🚀 Deploying ${{ github.ref }}"
