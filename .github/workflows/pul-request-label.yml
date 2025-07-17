@@ -7,10 +7,13 @@ on:
 jobs:
   add-label:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
       - name: Check out the repository
         uses: actions/checkout@v4
       - name: Try to add label to pull request
         run: |
           gh pr edit ${{ github.event.pull_request.number }} --add-label "needs-review"
-        env: GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
