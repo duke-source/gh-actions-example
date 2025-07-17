@@ -1,13 +1,12 @@
 name: Scheduled Event Trigger Workflow
+
 on:
   schedule:
     - cron: '0 * * * *'
 jobs:
-  scheduled-job:
+  test_schedule:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
       - name: Run scheduled task
         run: echo "This job runs every minute as per the cron schedule."
       - name: Notify completion
