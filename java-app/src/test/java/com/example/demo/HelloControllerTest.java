@@ -10,7 +10,7 @@ class HelloControllerTest {
     void hello_should_return_hello_world() {
         var result = new HelloController().hello();
 
-        assertThat(result).isEqualTo("Hello World!");
+        assertThat(result).isEqualTo("Hello World 2!");
     }
 
 }
