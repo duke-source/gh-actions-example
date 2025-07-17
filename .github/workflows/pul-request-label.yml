@@ -13,4 +13,5 @@ jobs:
       - name: Try to add label to pull request
         run: |
           gh pr edit ${{ github.event.pull_request.number }} --add-label "needs-review"
-        env: GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
